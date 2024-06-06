@@ -1,0 +1,14 @@
+{
+  "name": "noexpressfullstackcoinflip",
+  "version": "1.0.0",
+  "description": "a simple coin flip game made using zero express but using node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "figlet": "^1.7.0"
+  }
+}
