@@ -17,28 +17,27 @@ const server = http.createServer((req, res) => {
     }
       
       else if (page == '/api') {
-        if('student' in params){
-          if(params['student']== 'leon'){
-            let flipRes = Math.ceil(Math.random() * 2) === 1 ? 'heads' : 'tails'
+        let flipRes = Math.ceil(Math.random() * 2) === 1 ? 'heads' : 'tails'
+        if('#clickMe'){
+           
+          if(flipRes === 'heads'){
+            
             res.writeHead(200, {'Content-Type': 'application/json'});
             const objToJson = {
-              name: "leon",
-              status: "Boss Man",
-              currentOccupation: "Baller"
+              text: 'heads'
+            
             }
             res.end(JSON.stringify(objToJson));
           }//student = leon
-          else if(params['student'] != 'leon'){
+          else if(flipRes === 'tails'){
             res.writeHead(200, {'Content-Type': 'application/json'});
             const objToJson = {
-              name: "unknown",
-              status: "unknown",
-              currentOccupation: "unknown"
+              text: 'tails'
             }
             res.end(JSON.stringify(objToJson));
-          }//student != leon
-        }//student if
-      }//else if
+          }
+        }
+      }
       else if (page == '/css/style.css'){
         fs.readFile('css/style.css', function(err, data) {
           res.write(data);
